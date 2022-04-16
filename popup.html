@@ -8,13 +8,13 @@
 		<title>Grey-box Web Scraper</title>
 
 		<!-- Bootstrap CSS -->
-		<link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3">
+		<link href="bootstrap.min.css" rel="stylesheet">
 	</head>
 	
-	<body class="py-2 px-3 bg-light">
+	<body class="container py-2 px-3 bg-light">
 		<h1 class="text-center">Grey-Box Web Downloader</h1>
 
-		<form class="row row-cols-lg-auto g-3 align-items-center">
+		<form id="url-form" class="row row-cols-lg-auto g-3 align-items-center" action="#">
 			<div class="col-12 input-group-sm">
 				<label for="urlFormInput">Starting URL</label>
 				<input type="url" name="url" class="form-control" id="urlFormInput" placeholder="Enter URL">
@@ -40,9 +40,9 @@
 		</form>
 
 		<!-- Bootstrap JS -->
-		<script src="bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+		<script src="bootstrap.bundle.min.js"></script>
 
-		<script src="js/popup.js"></script>
-		<script src="js/script.js"></script>
+		<!-- Popup JS -->
+		<script src="/popup.js"></script>
 	</body>
 </html>
