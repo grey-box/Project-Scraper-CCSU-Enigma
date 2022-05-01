@@ -8,8 +8,23 @@
 		"storage",
 		"tabs",
 		"downloads",
-		"contextMenus"
+		"contextMenus",
+		"declarativeNetRequest"
 	],
+
+	"host_permissions": [
+		"<all_urls>"
+	],
+
+	"declarative_net_request": {
+		"rule_resources": [
+			{
+				"id": "cors_ruleset",
+				"enabled": true,
+				"path": "corsrules.json"
+			}
+		]
+	},
 
 	"action": {
 		"default_popup": "popup.html"

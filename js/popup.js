@@ -1,18 +1,15 @@
-let form = document.getElementById("url-form")
+let form = document.getElementById('url-form')
 
 form.addEventListener('submit', async (event) => {
-	let url = form.elements["url"]
+	let url = form.elements['url']
+	let corsbypass = form.elements['corsbypass']
 
-	fetch('http://127.0.0.1:8080/' + url.value)
-		.then(res => res.text())
-		.then(txt => { console.log(txt) })
-		.catch(e => {
-			console.log(e)
-		})
+	if (corsbypass.value) {
+		chrome.storage.sync.set({corsbypass: true})
+	}
 
 	await chrome.downloads.download({
-		url: 'http://127.0.0.1:8080/' + url.value,
-		filename: 'cors_file'
+		url: url.value,
 	})
 
 	event.preventDefault()
