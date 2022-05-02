@@ -6,14 +6,27 @@ chrome.runtime.onInstalled.addListener(() => {
 	})
 })
 
-//chrome.webRequest.onBeforeRequest.addListener((details) => {
-//	let canbypass = chrome.storage.sync.get('corsbypass').then((res) => res)
-//
-//	if (!canbypass) {
-//		return
-//	}
-//
-//	details.requestHeaders.push({ 'X-Requested-With': '' })
-//
-//	return { requestHeaders: details.requestHeaders }
-//}, { urls: ['<all_urls>'] }, ['extraHeaders'])
+// const cors_rule = {
+// 	id: 1,
+// 	priority: 1,
+// 	action: {
+// 		type: "modifyHeaders",
+// 		responseHeaders: [
+// 			{ header: "Content-Security-Policy", operation: "remove" },
+// 			{ header: "X-Requested-With", operation: "set", value: "" }
+// 		]
+// 	},
+// 	condition: {
+// 		resourceTypes: ["main_frame", "xmlhttprequest"]
+// 	}
+// }
+
+// chrome.storage.onChanged.addListener((changes) => {
+// 	if ('corsbypass' in changes) {
+// 		if (!changes.corsbypass.newValue) {
+// 			chrome.declarativeNetRequest.updateDynamicRules({ addRules: [cors_rule] })
+// 		} else {
+// 			chrome.declarativeNetRequest.updateDynamicRules({ removeRuleIds: [1] })
+// 		}
+// 	}
+// })
